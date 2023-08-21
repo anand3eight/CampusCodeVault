@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title>Form</title>
+    <script>
+      function numbervalidation(){
+    let x = document.forms["form1"]["number"].value;
+    if(x != '^\d{10}$'){
+        alert("Number Field is Invalid");
+        return false;
+        }
+    }
+    </script>
+  </head>
+  <body>
+      <form name="form1" onsubmit="return numbervalidation()">
+      <label>Number : </label>
+      <input type = "text" name="number" size="40"><br>
+      <input type = "submit" name="subButton" value="submit">
+    </form>
+    </body>
+</html>

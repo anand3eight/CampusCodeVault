@@ -1,0 +1,10 @@
+Student : 1
+Name       : Anndada
+City       : Cbcb
+DOB        : 03/08/2003
+Age        : 30
+Sem        : 3
+Total      : 450
+Attendance : 0
+Grade      : A+
+Rank       : 1

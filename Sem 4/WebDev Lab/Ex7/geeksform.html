@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Create a Form Dynamically with
+            the JavaScript
+        </title>
+    </head>
+    <body style="text-align: center;">
+        <button onClick="GFG_Fun()">
+            click here
+        </button>
+ <script>           
+    // Create a break line element
+    var br = document.createElement("br");
+    function GFG_Fun() {
+        document.write("Hello")
+               
+    // Create a form dynamically
+    var form = document.createElement("form");
+ 
+    // Create an input element for Full Name
+    var FN = document.createElement("input");
+    FN.setAttribute("type", "text");
+    FN.setAttribute("name", "FullName");
+    FN.setAttribute("placeholder", "Full Name");
+    form.appendChild(FN);
+    
+    document.getElementsByTagName("body")[0]
+               .appendChild(form);
+            }
+        </script>
+    </body>
+</html>

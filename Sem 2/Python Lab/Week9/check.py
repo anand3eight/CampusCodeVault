@@ -1,0 +1,3 @@
+import samplemodule
+
+samplemodule.display()

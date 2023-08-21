@@ -1,0 +1,24 @@
+/* PSG COLLEGE OF TECHNOLOGY, COIMBATORE – 641004
+DEPARTMENT OF INFORMATION TECHNOLOGY
+27/12/2021
+PRACTICE PROBLEM – LOOPING CONSTRUCTS
+
+1)Given a three digit number, write a program to find the reverse of the given number.
+2)Perfect number is a positive number whose sum of positive divisors excluding the number itself, are equal to the number itself.
+Example:
+Number: 6
+Divisors: 1,2,3
+Sum of Divisors: 1+2+3 = 6
+Hence, the given number is a perfect number
+3)Kattapa, as you all know was one of the greatest warriors of his time. The kingdom of Maahishmati had never lost a battle under him (as army-chief), and the reason for that was their really powerful army, also called as Mahasena. Kattapa was known to be a very superstitious person. He believed that a soldier is "lucky" if the soldier is holding an even number of weapons, and "unlucky" otherwise. He considered the army as "READY FOR BATTLE" if the count of "lucky" soldiers is strictly greater than the count of "unlucky" soldiers, and "NOT READY" otherwise. Given the number of weapons each soldier is holding, your task is to determine whether the army formed by all these soldiers is "READY FOR BATTLE" or "NOT READY".
+4)It's IPL time and as usual RCB are finding it tough to qualify for playoffs. RCB needs a minimum of X more points to qualify for playoffs in their remaining Y matches. A win, tie and loss in a match will yield 2, 1, 0 points respectively to a team.
+You being a true RCB supporter want to find the minimum number of matches RCB needs to win to qualify for playoffs. It is guaranteed that RCB will qualify for playoffs if they win all their remaining Y matches.
+Sample Input:
+Example 1: 10 5
+Output: 5
+(Note: In first case X=10 and Y=5, so RCB needs 10 points from remaining 5 matches to qualify for playoffs. It is only possible if they win all their remaining 5 matches.)
+Example 2: 1 5
+5
+0
+(Note: X=1 and Y=5, so RCB needs 1 points from their remaining 5 matches to qualify for playoffs. It can be done if they tie any one of their 5 matches and lose the remaining 4. So they need to win 0 matches.)
+5)Write a program that generates a table showing the difference between "time1" calculated as "time1 += deltaT" and "time2" calculated as "time2 = i * deltaT", for iterations from 0 up to an upper limit specified by the user. The user should also specify a frequency for how frequently (s) he wants the results printed in the table. So if they enter 10 for the frequency you should print results every 10th time through the loop, and if they enter 100, then print every 100th time through the loop, etc. Hint: Use mod for the printing frequency. */

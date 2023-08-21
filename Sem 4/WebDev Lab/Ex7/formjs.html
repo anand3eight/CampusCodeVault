@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>JS Form</title>
+    </head>
+    <body>
+        <button onClick="Form1()">
+            Click
+        </button>
+    <script>
+        var br = document.createElement("br");
+        function Form1(){
+            var f = document.createElement("form");
+            var fname = document.createElement("input");
+            fname.setAttribute("type", "text");
+            fname.setAttribute("name", "FullName")
+            fname.setAttribute("placeholder", "FullName");
+            f.appendChild(fname);
+            f.appendChild(br.cloneNode());
+            document.getElementsByTagName("body")[0]
+            .appendChild(f);
+        }
+    </script>
+    </body>
+    
+</html>

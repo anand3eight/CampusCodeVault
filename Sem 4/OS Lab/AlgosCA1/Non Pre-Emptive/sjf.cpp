@@ -1,0 +1,121 @@
+// SJF Scheduling Algorithm
+
+#include <iostream>
+#include <cstdlib>
+#include <queue>
+#include <iomanip>
+using namespace std;
+typedef struct Process Process;
+struct Process
+{
+      char name[30];
+      int at, bt, tat, wt;
+};
+
+Process *inputProcesses(int n)
+{
+      Process *prs = (Process *)malloc(sizeof(Process) * n);
+      cout << "Enter Details : (Name, AT, BT) " << endl;
+      for (int i = 0; i < n; i++)
+      {
+            cin >> prs[i].name >> prs[i].at >> prs[i].bt;
+      }
+      return prs;
+}
+
+void swap(int *arr, int i, int j)
+{
+      int temp = arr[i];
+      arr[i] = arr[j];
+      arr[j] = temp;
+}
+
+int *sortSJF(Process *prs, int n)
+{
+      int temp;
+      int *order = (int *)malloc(sizeof(int) * n);
+      for (int i = 0; i < n; i++)
+      {
+            order[i] = i;
+      }
+      for (int i = 0; i < n - 1; i++)
+      {
+            for (int j = i + 1; j < n; j++)
+            {
+                  if (prs[order[i]].at > prs[order[j]].at)
+                        swap(order, i, j);
+            }
+      }
+      int t = prs[order[0]].at, min;
+      for (int i = 0; i < n; i++)
+      {
+            min = INT32_MAX;
+            for (int j = i; j < n; j++)
+            {
+                  if (prs[order[j]].at <= t)
+                  {
+                        if (min > prs[order[j]].bt)
+                        {
+                              min = prs[order[j]].bt;
+                              swap(order, i, j);
+                        }
+                  }
+                  else
+                  {
+                        break;
+                  }
+            }
+            t += prs[order[i]].bt;
+      }
+      return order;
+}
+
+void SJF(Process *prs, int *ord, int cst, int n)
+{
+      int t = 0;
+      for (int i = 0; i < n; i++)
+      {
+            if (prs[ord[i]].at > t)
+            {
+                  t = prs[ord[i]].at;
+            }
+            t += prs[ord[i]].bt;
+            prs[ord[i]].tat = t - prs[ord[i]].at;
+            prs[ord[i]].wt = prs[ord[i]].tat - prs[ord[i]].bt;
+            t += cst;
+      }
+}
+
+void printProcesses(Process *prs, int *ord, int n)
+{
+      cout << "Order : ";
+      for (int i = 0; i < n; i++)
+      {
+            cout << prs[ord[i]].name << " ";
+      }
+      cout << endl;
+      int ttat = 0, twt = 0;
+      cout << setw(10) << "Process" << setw(10) << "BT" << setw(10) << "WT" << setw(10) << "TAT" << endl;
+      for (int i = 0; i < n; i++)
+      {
+            twt += prs[i].wt;
+            ttat += prs[i].tat;
+            cout << setw(10) << prs[i].name << setw(10) << prs[i].bt << setw(10) << prs[i].wt << setw(10) << prs[i].tat << endl;
+      }
+      cout << setw(40) << "Average Waiting Time : " << setw(10) << setprecision(3) << (float)twt / n << endl;
+      cout << setw(40) << "Average Turn Around Time : " << setw(10) << setprecision(3) << (float)ttat / n << endl;
+}
+
+int main()
+{
+      int n, cst;
+      cout << "Process Count : ";
+      cin >> n;
+      cout << "Context Switching Time : (Type 0 if NA) -> ";
+      cin >> cst;
+      Process *prs = inputProcesses(n);
+      int *order = sortSJF(prs, n);
+      SJF(prs, order, cst, n);
+      printProcesses(prs, order, n);
+      return 0;
+}

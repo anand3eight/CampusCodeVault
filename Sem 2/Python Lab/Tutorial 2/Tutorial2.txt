@@ -1,0 +1,165 @@
+				TUTORIAL 2
+			19I210 Python Programming
+											Anand Narayanan N
+											21I205
+											Btech IT G1
+1)#Alien Collision
+class Alien :
+    def __init__(self, x, y) :
+        self.x = x
+        self.y = y
+        self.health = 3
+    def hit(self) :
+        self.health -= 1
+    def Is_Alive(self) :
+        if self.health <= 0 :
+            print('Game Over')
+        else :
+            print("Health : ", self.health)
+    def teleport(self, nx, ny) :
+        self.x = nx
+        self.y = ny
+    def Collision_detection(self, x, y) :
+         if self.x - x < 3 or self.y - y < 3 :
+             self.hit()
+             self.Is_Alive()
+    def displayCd(self) :
+        print(self.x, self.y)
+
+
+x,y = map(int, input("Enter Co-Ordinates : ").split())
+a = Alien(x,y)
+count = 0
+countls = list()
+ch = 1
+while(ch != 0) :
+    obx, oby = map(int,input("Enter Object Co-ordinates : ").split())
+    a.Collision_detection(obx, oby)
+    count += 1
+    countls.append((obx,oby))
+    ch = int(input("To End : Press 0 "))
+print(count)
+print(countls)
+---------------------------------------------------------------------------------
+2)#Number Generator
+
+class Numbers : 
+    def triangle(self, n) :
+        print(int((n*(n+1))/2))
+    def pentagon(self, n) :
+        print(int((n*(3*n-1))/2))
+    def hexagon(self, n) :
+        print(int((n*(2*n-1))))
+    def find_n(self, n, mark) :
+        if mark in 'T' : self.triangle(n)
+        elif mark in 'P' : self.pentagon(n)
+        elif mark in 'H' : self.hexagon(n)
+        else : print("Invalid Choice")
+
+num = Numbers()
+n = int(input("Enter N : "))
+num.triangle(n)
+num.pentagon(n)
+num.hexagon(n)
+n, mark = input("Enter N And Mark : ").split()
+num.find_n(int(n), mark)
+---------------------------------------------------------------------------------
+3)#Credit Card Number
+
+class CCchecker :
+    def __init__(self, ccnum) :
+        self.ccnum = ccnum
+    def is_valid_format(self) :
+        self.checkls = ['0','1','2','3','4','5','6','7','8','9', ' ']
+        for i in self.ccnum :
+            if i not in self.checkls :
+                return 0
+        
+        return 1
+    def is_valid_length(self) :
+        if len(self.ccnum) == 16 + 3 :
+            return 1
+        else :
+            return 0
+    def is_valid_number(self):
+        self.ccnum = self.ccnum
+        self.num = []
+        for i in self.ccnum :
+            if i != ' ':
+                self.num.append(int(i))
+        print(self.num)
+        self.dup = list()
+        for i in range(0, 16) :
+                print(i)
+                if i % 2 == 0 :    
+                    if int(self.num[i]) * 2 > 9 :  self.dup.append(int(self.num[i])*2 - 9)
+                    else : self.dup.append(int(self.num[i]) * 2)
+                else :
+                    self.dup.append(self.num[i])
+        print(self.dup)
+        self.tot = sum(self.dup)
+        if self.tot % 10 == 0 :
+            print('Valid')
+        else :
+            print('Invalid')
+                    
+        
+ccnum = input("Enter Number : ")
+check = CCchecker(ccnum)
+if check.is_valid_format() == 0 or check.is_valid_length() == 0 :
+    print('Invalid')
+else :
+    check.is_valid_number()
+----------------------------------------------------------------------------------
+4)#To-Do List
+
+class toDoList :
+    def __init__(self) :
+        self.itemls = list()
+    def add_item(self, item) :
+        self.itemls.append(item)
+    def delete_item(self, ditem) :
+        if item in self.itemls :
+            self.itemls.remove(item)
+        else :
+            print("No Item Available ")
+    def printLs(self) :
+        print(self.itemls)
+print('1: Add \n2: Delete \n3:Print')
+test = 1
+td = toDoList()
+while(test != 0) :
+    ch = int(input("Enter Your Choice : "))
+    if ch == 1 :
+            item = input("Enter Item : ")
+            td.add_item(item)
+    elif ch == 2 :
+            item = input("Enter Item : ")
+            td.delete_item(item)
+    elif ch == 3 :
+            td.printLs()
+            test = 0
+    else :
+            print("Enter Valid Choice")
+----------------------------------------------------------------------------------
+5)#Automatic Grading System
+
+n, m = map(int, input("Enter N and M : ").strip().split())
+ls = list()
+for i in range(n) :
+    elmtls = list(map(str, input().strip().split()))[:m+1]
+    ls.append(elmtls)
+avg = 0
+for i in ls :
+    elmtavg = float(sum([int(i[j]) for j in range(1, m+1)])/m)
+    i.append(elmtavg)
+    avg += elmtavg
+avg /= n
+print(avg)
+for i in ls :
+    print(i[0], i[m+1])
+---------------------------------------------------------------------------------
+
+
+
+              

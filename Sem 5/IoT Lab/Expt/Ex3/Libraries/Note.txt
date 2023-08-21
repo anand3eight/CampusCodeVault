@@ -1,0 +1,45 @@
+--> Node ESP8266 Board Installation : 
+Link : http://arduino.esp8266.com/stable/package_esp8266com_index.json
+
+Steps : 
+1) Go to File->Preferences
+2) Paste this link in the Additional Library URLs
+3) Click OK
+4) Go to Tools->Boards->Board Manager
+5) Search Node ESP8266
+6) Install the Library
+7) Go to Tools->Boards->esp8266
+8) Choose NodeMCU 1.0 (12E Module)
+
+--> RFID Library Installation 
+
+Steps :
+1) Go to Sketch->Include Library
+2) Go Include .zip Library
+3) Choose the Library rfid-master.zip in this Folder
+
+--> Port Disabled Issue : 
+
+Steps : 
+1) Run the .exe file given in the Folder
+2) Make sure Arduino is open during the installation process
+
+--> Blink Library Installation
+
+Steps :
+1) Go to Sketch->Include Library
+2) Go Include .zip Library
+3) Choose the Library blynk-library-master.zip in this Folder
+
+--> Video Links :
+1) NodeMCU with Wifi
+https://www.youtube.com/watch?v=TnWDlHpY56o
+
+2) NodeMCU and LED with Cloud :
+https://www.youtube.com/watch?v=AvSCAxbqvvE&t=1073s
+
+3) NodeMCU and RFID With Cloud :
+https://youtu.be/LqRDissHtys
+
+4) Port Disabled Fix :
+https://www.youtube.com/watch?v=8S7AfFQlamM

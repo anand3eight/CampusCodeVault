@@ -1,0 +1,7 @@
+s = input("Enter String : ")
+print(len(s))
+print((s + "\n" )* 10)
+print(s[0], s[:3], s[-1:-4:-1],s[-1:-len(s)-1:-1])
+if(len(s) > 7) : print(s[7])
+else : print("Not Possible " )
+print(s[1: len(s)  -1], s.upper(), s.replace('a', 'e'), ' ' * len(s), "End")

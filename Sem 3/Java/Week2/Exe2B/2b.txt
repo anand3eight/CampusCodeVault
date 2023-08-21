@@ -1,0 +1,97 @@
+Input the Values ->
+Student : 1
+Enter Marks Out of 95 :
+95
+95
+95
+95
+95
+Enter Name : ABC
+Enter City : NYC
+Enter Age : 18
+Enter Total Working Days : 200
+Enter Leave Days : 10
+-------------------------------------
+Student : 2
+Enter Marks Out of 95 :
+90
+90
+90
+90
+90
+Enter Name : XYZ
+Enter City : BYN
+Enter Age : 19
+Enter Total Working Days : 230
+Enter Leave Days : 30
+-------------------------------------
+Student : 3
+Enter Marks Out of 95 :
+0
+0
+0
+0
+0
+Enter Name : PQR
+Enter City : CLN
+Enter Age : 20
+Enter Total Working Days : 300
+Enter Leave Days : 30
+-------------------------------------
+Student : 4
+Enter Marks Out of 95 :
+60
+60
+60
+60
+60
+Enter Name : DEF
+Enter City : CJB
+Enter Age : 21
+Enter Total Working Days : 300
+Enter Leave Days : 0
+-------------------------------------
+Student : 5
+Enter Marks Out of 95 :
+70
+70
+70
+70
+70
+Enter Name : GHI
+Enter City : MAS
+Enter Age : 22
+Enter Total Working Days : 220
+Enter Leave Days : 20
+-------------------------------------
+Output ->
+Student : 1
+Name : ABC
+City : NYC
+Age : 18
+Grade : O
+-------------------------------------
+Student : 2
+Name : XYZ
+City : BYN
+Age : 19
+Grade : A+
+-------------------------------------
+Student : 3
+Name : PQR
+City : CLN
+Age : 20
+Grade : F
+-------------------------------------
+Student : 4
+Name : DEF
+City : CJB
+Age : 21
+Grade : C
+-------------------------------------
+Student : 5
+Name : GHI
+City : MAS
+Age : 22
+Grade : B
+-------------------------------------

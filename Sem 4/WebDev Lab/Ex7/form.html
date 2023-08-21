@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title>Form</title>
+    <script>
+      function formvalidation(){
+    let x = document.forms["form1"]["fname"].value;
+    if(x == ""){
+        alert("Field is Empty");
+        return false;
+        }
+    }
+    </script>
+  </head>
+  <body>
+    <form name="form1" onsubmit="return formvalidation()">
+      <label>Name : </label>
+      <input type = "text" name="fname" size="40"><br>
+      <input type = "submit" name="subButton" value="submit">
+    </form>
+    </body>
+</html>
